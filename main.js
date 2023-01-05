@@ -34,3 +34,5 @@ function add(a, b) {
 }
 console.log(add(10, 5));
 console.log(add(10));
+var add2 = function (a, b) { return a + b; };
+console.log(add2(11, 22));
