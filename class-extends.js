@@ -1,4 +1,3 @@
-// Class
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -15,27 +14,12 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 var User = /** @class */ (function () {
-    // public name: string;
-    // constructor(name: string) {
-    //   this.name = name;
-    // }
-    // Same as abobe constructor
     function User(_name) {
         this._name = _name;
     }
     User.prototype.sayHi = function () {
-        return "Hi! I am ".concat(this._name);
+        console.log("hi! i am " + this._name);
     };
-    Object.defineProperty(User.prototype, "name", {
-        get: function () {
-            return this._name;
-        },
-        set: function (vewValue) {
-            this._name = vewValue;
-        },
-        enumerable: false,
-        configurable: true
-    });
     return User;
 }());
 var AdminUser = /** @class */ (function (_super) {
@@ -46,15 +30,11 @@ var AdminUser = /** @class */ (function (_super) {
         return _this;
     }
     AdminUser.prototype.sayHi = function () {
-        return _super.prototype.sayHi.call(this) + " and I am ".concat(this._age, " years old");
+        console.log("my age: " + this._age);
+        console.log("my name: " + this._name);
+        _super.prototype.sayHi.call(this);
     };
     return AdminUser;
 }(User));
-var Claudia = new User("Claudia");
-// console.log(Claudia._name); // Error because _name is private
-console.log(Claudia.sayHi());
-Claudia.name = 'CLAUDIA';
-console.log(Claudia.name);
-console.log(Claudia.sayHi());
-var Anna = new AdminUser("Anna", 30);
-console.log(Anna.sayHi());
+var bob = new AdminUser("Bob", 23);
+bob.sayHi();
