@@ -22,6 +22,7 @@ var User = /** @class */ (function () {
     // Same as abobe constructor
     function User(_name) {
         this._name = _name;
+        User.count++;
     }
     User.prototype.sayHi = function () {
         return "Hi! I am ".concat(this._name);
@@ -36,6 +37,10 @@ var User = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
+    User.showDescription = function () {
+        return "User class (".concat(this.count, " users)");
+    };
+    User.count = 0;
     return User;
 }());
 var AdminUser = /** @class */ (function (_super) {
@@ -58,3 +63,5 @@ console.log(Claudia.name);
 console.log(Claudia.sayHi());
 var Anna = new AdminUser("Anna", 30);
 console.log(Anna.sayHi());
+console.log(User.count);
+console.log(User.showDescription());

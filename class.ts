@@ -7,7 +7,9 @@ class User {
   // }
 
   // Same as abobe constructor
-  constructor(protected _name: string) {}
+  constructor(protected _name: string) {
+    User.count++;
+  }
 
   public sayHi(): string {
     return `Hi! I am ${this._name}`;
@@ -17,6 +19,12 @@ class User {
   }
   set name(vewValue: string) {
     this._name = vewValue;
+  }
+
+  static count: number = 0;
+
+  static showDescription(): string {
+    return `User class (${this.count} users)`;
   }
 }
 
@@ -41,3 +49,6 @@ console.log(Claudia.sayHi());
 
 var Anna = new AdminUser("Anna", 30);
 console.log(Anna.sayHi());
+
+console.log(User.count);
+console.log(User.showDescription());
