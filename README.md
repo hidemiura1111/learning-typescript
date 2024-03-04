@@ -5,4 +5,6 @@ tsc class.ts  -t ES5
 tsc module_main.ts --out all.js
 
 node main.js
+
+npm start // lite-server
 ```
