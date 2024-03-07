@@ -32,3 +32,5 @@ enum Color {
 
 console.log(Color['Yellow']);
 console.log(Color[3]);
+console.log('End');
+
